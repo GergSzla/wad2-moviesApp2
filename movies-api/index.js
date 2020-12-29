@@ -1,9 +1,11 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import moviesRouter from './api/movies';
+app.use('/api/users', usersRouter);
 import bodyParser from 'body-parser';
 import './db';
 import {loadUsers} from './seedData'
+import usersRouter from './api/users';
 
 dotenv.config();
 const errHandler = (err, req, res, next) => {
