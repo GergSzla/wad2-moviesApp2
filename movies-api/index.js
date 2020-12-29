@@ -7,7 +7,7 @@ import './db';
 import { loadUsers } from './seedData'
 import usersRouter from './api/users';
 import session from 'express-session';
-import authenticate from './authenticate';
+import passport from './authenticate';
 
 dotenv.config();
 const errHandler = (err, req, res, next) => {
@@ -19,7 +19,8 @@ const errHandler = (err, req, res, next) => {
   res.status(500).send(`Hey!! You caught the error 👍👍, ${err.stack} `);
 };
 const app = express();
-
+app.use(passport.initialize());​
+app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
 if (process.env.SEED_DB) {
   loadUsers();
 }
