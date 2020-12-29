@@ -4,7 +4,7 @@ import moviesRouter from './api/movies';
 app.use('/api/users', usersRouter);
 import bodyParser from 'body-parser';
 import './db';
-import { loadUsers } from './seedData'
+import { loadUsers, loadMovies } from './seedData'
 import usersRouter from './api/users';
 import session from 'express-session';
 import passport from './authenticate';
@@ -21,8 +21,10 @@ const errHandler = (err, req, res, next) => {
 const app = express();
 app.use(passport.initialize());​
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+
 if (process.env.SEED_DB) {
   loadUsers();
+  loadMovies();
 }
 
 app.use(session({
