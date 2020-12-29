@@ -4,14 +4,16 @@ import moviesRouter from './api/movies';
 app.use('/api/users', usersRouter);
 import bodyParser from 'body-parser';
 import './db';
-import {loadUsers} from './seedData'
+import { loadUsers } from './seedData'
 import usersRouter from './api/users';
+import session from 'express-session';
+import authenticate from './authenticate';
 
 dotenv.config();
 const errHandler = (err, req, res, next) => {
   /* if the error in development then send stack trace to display whole error,
   if it's in production then just send error message  */
-  if(process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     return res.status(500).send(`Something went wrong!`);
   }
   res.status(500).send(`Hey!! You caught the error 👍👍, ${err.stack} `);
@@ -21,6 +23,12 @@ const app = express();
 if (process.env.SEED_DB) {
   loadUsers();
 }
+
+app.use(session({
+  secret: 'ilikecake',
+  resave: true,
+  saveUninitialized: true
+}));
 
 const port = process.env.PORT;
 app.use(bodyParser.json());
