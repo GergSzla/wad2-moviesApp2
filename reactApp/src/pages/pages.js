@@ -1,9 +1,13 @@
 import React from 'react';
+import { useContext} from 'react';
+import { MoviesContext } from '../contexts/movieContext';
+
 
 export const PublicPage = () => {
     return <h2>Public page</h2>
-}
-export const Movies = () => {
+ }
+
+ export const Movies = () => {
     const context = useContext(MoviesContext);
     return <>
         <h2>Movies Data </h2>
@@ -12,9 +16,12 @@ export const Movies = () => {
         </div>
     </>
 }
-export const Profile = () => {
+
+ export const Profile = () => {
     return <h2>My Profile </h2>
 }
-export const HomePage = () => {
-    return <h2>Home page</h2>
-}
+
+ export const HomePage = () => {
+     return  <h2>Home page</h2>
+ }
+ 
