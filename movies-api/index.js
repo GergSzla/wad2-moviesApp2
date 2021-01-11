@@ -3,6 +3,7 @@ import express from 'express';
 import moviesRouter from './api/movies';
 import usersRouter from './api/users';
 import genresRouter from './api/genres';
+import actorsRouter from './api/actors';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from './authenticate';
@@ -48,6 +49,8 @@ app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRou
 
 app.use('/api/users', usersRouter);
 app.use('/api/genreModel', genresRouter);
+app.use('/api/actors', passport.authenticate('jwt', {session: false}), actorsRouter);
+
 app.use(errHandler);
 
 app.listen(port, () => {

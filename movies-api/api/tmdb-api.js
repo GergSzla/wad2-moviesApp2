@@ -28,3 +28,17 @@ export const getMovies = () => {
       .then(res => res.json())
       .then(json => json.results);
   };
+
+  export const getActors = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/trending/person/day?api_key=${process.env.TMDB_KEY}`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+
+  export const getActor = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.TMDB_KEY}&language=en-US`
+    ).then(res => res.json());
+  };
