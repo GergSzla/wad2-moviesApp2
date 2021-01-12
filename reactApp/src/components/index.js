@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import { PublicPage, Profile } from "../pages/pages";
 import LoginPage from "./signUp/loginPage";
-import MoviesPage from "../pages/moviePage";
+import MoviesPage from "../pages/discMoviePage";
 import ActorsPage from "../pages/actorsPage";
 import HomePage from "../pages/homePage";
 

@@ -7,7 +7,7 @@ const ActorSchema = new Schema({
     known_for_dept: {type:String},
     deathday: {type:String},
     id: { type: Number, required: true, unique: true},
-    name: {type: Stirng},
+    name: {type: String},
     aka: [{type: String}],
     biography: {type:String},
     popularity: {type: Number},

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import PageTemplate from '../components/templatePersonListPage'
+import PageTemplate from '../components/templateActorListPage'
 import {ActorsContext} from '../contexts/actorContext'
 
-const PersonListPage = () => {
+const ActorListPage = () => {
   const context = useContext(ActorsContext);
   const actors = context.actors
 
@@ -14,4 +14,4 @@ const PersonListPage = () => {
   );
 };
 
-export default PersonListPage;
+export default ActorListPage;

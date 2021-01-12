@@ -7,7 +7,7 @@ import actorsRouter from './api/actors';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from './authenticate';
-import {loadUsers, loadMovies} from './seedData';
+import {loadUsers, loadMovies, loadActors} from './seedData';
 import './db';
 
 dotenv.config();
@@ -24,6 +24,7 @@ const errHandler = (err, req, res, next) => {
 if (process.env.SEED_DB) {
   loadUsers();
   loadMovies();
+  loadActors();
 }
 
 const app = express();

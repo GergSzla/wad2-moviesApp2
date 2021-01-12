@@ -24,11 +24,11 @@ const MovieListPageTemplate = ({ movies, title, action }) => {
 
   return (
     <>
-      <Header title={title} numMovies={displayedMovies.length} />
+      <Header title={title} numMovies={movies.length} />
       {/* <FilterControls onUserInput={handleChange} numMovies={displayedMovies.length}/> */}
       <MovieList
     //    action={action}
-       movies={displayedMovies}
+       movies={movies}
       ></MovieList>
     </>
   );
