@@ -37,3 +37,13 @@ export const getActors = () => {
     }
     ).then(res => res.json());
 };
+
+export const getSeries = () => {
+    return fetch(
+        '/api/series', {
+            headers: {
+                'Authorization': window.localStorage.getItem('token')
+            }
+    }
+    ).then(res => res.json());
+};
