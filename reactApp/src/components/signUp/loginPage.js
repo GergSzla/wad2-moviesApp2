@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { AuthContext } from '../../contexts/authContext';
-import { Form, Button, Card, Alert } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 
 const LoginPage = props => {
@@ -13,9 +13,7 @@ const LoginPage = props => {
   const login = () => {
     context.authenticate(userName, password);
   };
-
-  // Set 'from' to path where browser is redirected after a successful login.
-  // Either / or the protected path user tried to access.
+  
   const { from } = props.location.state || { from: { pathname: "/" } };
 
   if (context.isAuthenticated === true) {

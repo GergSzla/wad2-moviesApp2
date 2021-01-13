@@ -4,6 +4,7 @@ import moviesRouter from './api/movies';
 import usersRouter from './api/users';
 import genresRouter from './api/genres';
 import actorsRouter from './api/actors';
+import seriesRouter from './api/series';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from './authenticate';
@@ -47,10 +48,11 @@ app.use(express.static('public'));
 
 // Add passport.authenticate(..)  to middleware stack for protected routes​
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use('/api/actors', passport.authenticate('jwt', {session: false}), actorsRouter);
+app.use('/api/series', passport.authenticate('jwt', {session: false}), seriesRouter);
 
 app.use('/api/users', usersRouter);
-app.use('/api/genreModel', genresRouter);
-app.use('/api/actors', passport.authenticate('jwt', {session: false}), actorsRouter);
+app.use('/api/genres', genresRouter);
 
 app.use(errHandler);
 

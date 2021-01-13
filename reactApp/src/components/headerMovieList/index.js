@@ -1,5 +1,5 @@
 import React from "react";
-import "./headerMovie.css";
+import "./headerMovieList.css";
 
 const Header = ({ title, numMovies }) => {
   return (

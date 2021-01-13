@@ -5,6 +5,7 @@ import { PublicPage, Profile } from "../pages/pages";
 import LoginPage from "./signUp/loginPage";
 import MoviesPage from "../pages/discMoviePage";
 import ActorsPage from "../pages/actorsPage";
+import SeriesPage from "../pages/seriesPage";
 import HomePage from "../pages/homePage";
 
 import SignUpPage from "./signUp/signUpPage";
@@ -12,6 +13,7 @@ import PriveRoute from "./signUp/privRoute";
 import SiteHeader from "./siteHeader/index";
 import MovieProvider from '../contexts/movieContext';
 import ActorProvider from '../contexts/actorContext';
+import SeriesProvider from '../contexts/seriesContext';
 import AuthProvider from "../contexts/authContext";
 
 const App = () => {
@@ -24,16 +26,19 @@ const App = () => {
               <SiteHeader />
               <MovieProvider>
                 <ActorProvider>
-                  <Switch>
-                    <Route path="/public" component={PublicPage} />
-                    <Route path="/login" component={LoginPage} />
-                    <Route path="/signup" component={SignUpPage} />,
+                  <SeriesProvider>
+                    <Switch>
+                      <Route path="/public" component={PublicPage} />
+                      <Route path="/login" component={LoginPage} />
+                      <Route path="/signup" component={SignUpPage} />,
                     <Route exact path="/" component={HomePage} />
-                    <PriveRoute path="/api/movies" component={MoviesPage} />
-                    <PriveRoute path="/api/actors" component={ActorsPage} />
-                    <PriveRoute path="/profile" component={Profile} />
-                    <Redirect from="*" to="/" />
-                  </Switch>
+                      <PriveRoute path="/api/movies" component={MoviesPage} />
+                      <PriveRoute path="/api/actors" component={ActorsPage} />
+                      <PriveRoute path="/api/series" component={SeriesPage} />
+                      <PriveRoute path="/profile" component={Profile} />
+                      <Redirect from="*" to="/" />
+                    </Switch>
+                  </SeriesProvider>
                 </ActorProvider>
               </MovieProvider>
             </AuthProvider>
