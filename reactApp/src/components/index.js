@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "../app.css"
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import { PublicPage, Profile } from "../pages/pages";
 import LoginPage from "./signUp/loginPage";
@@ -18,10 +19,10 @@ import AuthProvider from "../contexts/authContext";
 
 const App = () => {
   return (
-    <div className="page-temp">
       <BrowserRouter>
-        <div className="page-template">
-          <div className="container-fluid">
+         <div className="jumbotron">
+        <div className="container-fluid">
+          <div className="page">
             <AuthProvider>
               <SiteHeader />
               <MovieProvider>
@@ -43,9 +44,9 @@ const App = () => {
               </MovieProvider>
             </AuthProvider>
           </div>
+          </div>
         </div>
       </BrowserRouter>
-    </div>
   );
 };
 

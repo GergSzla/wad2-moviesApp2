@@ -4,7 +4,7 @@ import "./seriesList.css";
 
 const SeriesList = ({series}) => {
   const seriesCards = series.map(m => (
-    <Series key={m.id} tv={m} />
+    <Series key={m.id} series={m} />
   ));
   return <div className="row tvs">{seriesCards} </div>;
 };

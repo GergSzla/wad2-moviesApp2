@@ -4,13 +4,15 @@ import { AuthContext } from "../../contexts/authContext";
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "./siteHeader.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const SiteHeader = () => {
   const context = useContext(AuthContext);
 
   return context.isAuthenticated ? (
+    <div className="siteHeader">
 
     <Navbar collapseOnSelect variant="dark" expand="lg" fixed="top">
       <FontAwesomeIcon
@@ -33,11 +35,13 @@ const SiteHeader = () => {
           </NavDropdown>
 
           <Nav.Item ><Link id="acc_nav" className="nav-link text-white"> ACCOUNT</Link></Nav.Item>
-          <Nav.Item><Link className="nav-link text-light" onClick={() => context.signout()} to="/">Logout</Link></Nav.Item>
+          <Nav.Item><Link className="nav-link text-light" onClick={() => context.signout()} to="/">LOGOUT</Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    </div>
   ) : (
+    <div className="siteHeader">
 
       <Navbar collapseOnSelect variant="dark" expand="lg" fixed="top">
         <FontAwesomeIcon
@@ -56,6 +60,7 @@ const SiteHeader = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      </div>
     );
 };
 

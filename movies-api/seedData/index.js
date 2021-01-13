@@ -1,8 +1,25 @@
 import userModel from '../api/users/userModel';
 import movieModel from '../api/movies/movieModel';
 import actorModel from '../api/actors/actorModel';
-import {movies} from './movies.js';
-import {actors} from './actors.js';
+// import {movies} from './movies.js';
+// import {actors} from './actors.js';
+import {getMovies,getActors,getSeries} from '../api/tmdb-api'
+import seriesModel from '../api/series/seriesModel';
+
+var movies
+getMovies().then((m) => {
+   movies = m
+})
+
+var actors
+getActors().then((a) => {
+  actors = a
+})
+
+var series
+getSeries().then((s) => {
+  series = s
+})
 
 
 const users = [
@@ -35,10 +52,9 @@ export async function loadUsers() {
   // deletes all movies documents in collection and inserts test data
 export async function loadMovies() {
   console.log('load seed data');
-  console.log(movies.length);
   try {
     await movieModel.deleteMany();
-    await movieModel.collection.insertMany(movies);
+    await movies.forEach(m => movieModel.create(m));
     console.info(`${movies.length} Movies were successfully stored.`);
   } catch (err) {
     console.error(`failed to Load movie Data: ${err}`);
@@ -48,11 +64,22 @@ export async function loadMovies() {
  // deletes all actors documents in collection and inserts test data
  export async function loadActors() {
   console.log('load actor data');
-  console.log(actors.length);
   try {
     await actorModel.deleteMany();
-    await actorModel.collection.insertMany(actors);
+    await actors.forEach(a => actorModel.create(a));
     console.info(`${actors.length} Actors were successfully stored.`);
+  } catch (err) {
+    console.error(`failed to Load Actors Data: ${err}`);
+  }
+}
+
+// deletes all series documents in collection and inserts test data
+export async function loadSeries() {
+  console.log('load series data');
+  try {
+    await seriesModel.deleteMany();
+    await series.forEach(s => seriesModel.create(s));
+    console.info(`${series.length} Series were successfully stored.`);
   } catch (err) {
     console.error(`failed to Load Actors Data: ${err}`);
   }

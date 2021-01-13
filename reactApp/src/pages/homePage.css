@@ -1,0 +1,11 @@
+.welcomeMsg{
+    background-color: rgb(189, 101, 1);
+    text-align: center;
+    padding: 12%;
+    color: rgb(0, 0, 0);
+    border-style: inset;
+    border-radius: 100px;
+    margin: 2%;
+    margin-top: 5%;
+    border-width: 8px;
+}

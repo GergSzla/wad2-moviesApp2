@@ -8,7 +8,7 @@ import seriesRouter from './api/series';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from './authenticate';
-import {loadUsers, loadMovies, loadActors} from './seedData';
+import {loadUsers, loadMovies, loadActors, loadSeries} from './seedData';
 import './db';
 
 dotenv.config();
@@ -26,6 +26,7 @@ if (process.env.SEED_DB) {
   loadUsers();
   loadMovies();
   loadActors();
+  loadSeries();
 }
 
 const app = express();

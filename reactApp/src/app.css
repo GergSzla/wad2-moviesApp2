@@ -1,0 +1,9 @@
+.page{
+    background-color: rgb(105, 105, 105);
+    padding-top: 1%;
+    padding-bottom: 12%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+}

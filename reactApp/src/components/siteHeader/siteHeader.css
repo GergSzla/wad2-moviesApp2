@@ -1,0 +1,7 @@
+/* Site Nav Bar */
+/* top - right - bottom - left */
+.fixed-top {
+    padding: 10px;
+    background-color:#333333;
+    font-size: large;
+}
