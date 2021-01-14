@@ -34,7 +34,7 @@ const SiteHeader = () => {
             <NavDropdown.Item><Link id="trending_actors" className="text-dark" to="/api/actors"> ACTORS</Link></NavDropdown.Item>
           </NavDropdown>
 
-          <Nav.Item ><Link id="acc_nav" className="nav-link text-white"> ACCOUNT</Link></Nav.Item>
+          <Nav.Item ><Link id="acc_nav" className="nav-link text-white" to="/account"> ACCOUNT</Link></Nav.Item>
           <Nav.Item><Link className="nav-link text-light" onClick={() => context.signout()} to="/">LOGOUT</Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>

@@ -9,6 +9,7 @@ import MoviesPage from "../pages/discMoviePage";
 import ActorsPage from "../pages/actorsPage";
 import SeriesPage from "../pages/seriesPage";
 import HomePage from "../pages/homePage";
+import UserProfPage from '../pages/userProfile'
 
 import SignUpPage from "./signUp/signUpPage";
 import PriveRoute from "./signUp/privRoute";
@@ -32,8 +33,9 @@ const App = () => {
                     <Switch>
                       <Route path="/public" component={PublicPage} />
                       <Route path="/login" component={LoginPage} />
-                      <Route path="/signup" component={SignUpPage} />,
-                    <Route exact path="/" component={HomePage} />
+                      <Route path="/signup" component={SignUpPage} />
+                      <Route exact path="/" component={HomePage} />
+                      <PriveRoute path="/account" component={UserProfPage} />
                       <PriveRoute path="/api/movies" component={MoviesPage} />
                       <PriveRoute path="/api/actors" component={ActorsPage} />
                       <PriveRoute path="/api/series" component={SeriesPage} />
