@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
 import { PublicPage, Profile } from "../pages/pages";
 import LoginPage from "./signUp/loginPage";
 import MoviesPage from "../pages/discMoviePage";
+// import MoviePage from '../pages/movieDetailsPage'
 import ActorsPage from "../pages/actorsPage";
 import SeriesPage from "../pages/seriesPage";
 import HomePage from "../pages/homePage";
@@ -37,6 +38,7 @@ const App = () => {
                       <PriveRoute path="/api/actors" component={ActorsPage} />
                       <PriveRoute path="/api/series" component={SeriesPage} />
                       <PriveRoute path="/profile" component={Profile} />
+                      {/* <PriveRoute path="/movies/:id" component={MoviePage} /> */}
                       <Redirect from="*" to="/" />
                     </Switch>
                   </SeriesProvider>

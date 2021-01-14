@@ -11,8 +11,8 @@
   }
   
   .card{
-    background-color: rgb(26, 26, 26);
-    color: white;
+    background-color: rgb(119, 119, 119);
+    color: rgb(0, 0, 0);
     margin-top: 40px;
     padding: 10px;
   }
@@ -21,7 +21,10 @@
   padding-top: 1px;
   padding-bottom: 1px;
   }
-  
+  #cardImg{
+    border-style: groove;
+    border-color: rgb(153, 92, 0);
+  }
   .card-title {
   text-align: center
   }

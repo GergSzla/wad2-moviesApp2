@@ -4,7 +4,7 @@ import "./movieList.css";
 
 const MovieList = ({movies}) => {
   const movieCards = movies.map(m => (
-    <Movie key={m.id} movie={m}/>
+    <Movie className="card" key={m.id} movie={m} />
   ));
   return <div className="row movies">{movieCards}</div>;
 };

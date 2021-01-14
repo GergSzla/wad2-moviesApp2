@@ -51,6 +51,7 @@ app.use(express.static('public'));
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
 app.use('/api/actors', passport.authenticate('jwt', {session: false}), actorsRouter);
 app.use('/api/series', passport.authenticate('jwt', {session: false}), seriesRouter);
+// app.use('/movies/:id', moviesRouter);
 
 app.use('/api/users', usersRouter);
 app.use('/api/genres', genresRouter);

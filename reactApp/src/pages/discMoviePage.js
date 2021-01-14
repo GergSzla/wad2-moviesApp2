@@ -11,6 +11,7 @@ const MovieListPage = () => {
     <PageTemplate 
       title='Discover Movies'
       movies={movies}
+      
       />
 );
 };
