@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ActorCard = ({ actor }) => {
 
   return (
-    <div className="col-sm-5">
+    <div className="col-sm-3">
       <div className="card">
         <div className="row">
           <div className="col-lg-6">
@@ -28,7 +28,7 @@ const ActorCard = ({ actor }) => {
             <h4 className="card-title">{actor.name}</h4>
             <p>
               <FontAwesomeIcon icon={["fas", "chart-line"]} />
-              <span><b>Also Known As: </b>{actor.popularity}</span>
+              <span>{actor.popularity}</span>
             </p>
           </div>
         </div>
