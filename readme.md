@@ -91,4 +91,4 @@ Year 4.
 
 ## Links
 - [GitHub](https://github.com/GergSzla/wad2-moviesApp2)
-- [YouTube](https://studio.youtube.com/video/SqgKMdk9kHQ/edit)
+- [YouTube](https://www.youtube.com/watch?v=SqgKMdk9kHQ)
