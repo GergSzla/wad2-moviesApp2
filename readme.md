@@ -18,6 +18,7 @@ Year 4.
     - Actors
 - Account Page
 - Home Page
+- Private Routes To Restrict Pages (Users required to sign in)
 
 ## APIs Used
 - https://api.themoviedb.org/3/discover/movie (Get Movies)
@@ -90,4 +91,4 @@ Year 4.
 
 ## Links
 - [GitHub](https://github.com/GergSzla/wad2-moviesApp2)
-- [YouTube](***ENTER URL HERE***)
+- [YouTube](https://studio.youtube.com/video/SqgKMdk9kHQ/edit)
