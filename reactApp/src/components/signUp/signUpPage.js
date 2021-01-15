@@ -28,24 +28,24 @@ const SignUpPage = props => {
     <>
       
         <Card.Body className = " text-center mt-5 ">
-          <h1 className="text-center mb-4"> Register</h1>
+          <h1 id="headerSU" className="text-center mb-4"> Register</h1>
 
-            <Form.Group className="text-left" id = "password">
+            <Form.Group className="text-left" id = "unFieldSU">
               <Form.Label> Username</Form.Label>
-              <Form.Control value={userName} placeholder="Username" onChange={e => {setUserName(e.target.value);}}></Form.Control>
+              <Form.Control  value={userName} placeholder="Username" onChange={e => {setUserName(e.target.value);}}></Form.Control>
             </Form.Group>
 
-            <Form.Group className="text-left" id = "password">
+            <Form.Group className="text-left" id = "pwFieldSU">
               <Form.Label> Password</Form.Label>
-              <Form.Control value={password} type="password" placeholder="Password" onChange={e => {setPassword(e.target.value);}}></Form.Control>
+              <Form.Control  value={password} type="password" placeholder="Password" onChange={e => {setPassword(e.target.value);}}></Form.Control>
             </Form.Group>
 
-           <Form.Group className="text-left" id = "password">
+           <Form.Group className="text-left" id = "pwReFieldSU">
               <Form.Label> Password Again</Form.Label>
               <Form.Control value={passwordAgain} type="password" placeholder="Confirm Password" onChange={e => {setPasswordAgain(e.target.value);}}></Form.Control>
             </Form.Group>
 
-          <Button onClick={register} className = "text-center w-50 " type = "submit" > Sign Up</Button>
+          <Button id ="btnReg" onClick={register} className = "text-center w-50 " type = "submit" > Sign Up</Button>
 
           <div  className = "w-100 text-center mt-2">
            Have an Account ? <Link className = "link" to = "/login" > Login</Link>
